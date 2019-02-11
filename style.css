@@ -95,38 +95,39 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-input[type=text] {
-  width: 10em;
-  padding: 12px 20px;
+input[type=number] {
+  width: 5em;
+  padding: 5px 20px;
   margin: 20px 0;
   box-sizing: border-box;
   border: none;
   border-radius: 50px;
   background-color: #ffffff;
-  color: white;
-    
-
-
+  color: #555555;
+  font-family: roboto;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .toggle{
-    float: left; 
-   /* margin-top: 23px */
-
-}
-.toggle2{
-    float: left; 
-   /* margin-top: 23px */
-
+    margin-top: 23px;
 }
 
-.textin{
-    float: left; 
-}
-.textin2{
-     float: left;
-}
+.row{
+    display: flex;
+    flex-direction: row;
+} 
 
-#row2{
-    white-space: normal
+#size{
+    font-family: Poppins;
+    color: white;
+    padding: 27px;
+    padding-right: 35px;
+    padding-left: 34.5px;
+    
+}
+#speed{
+    padding: 27px;
+    font-family: Poppins;
+    color: white;
 }
