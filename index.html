@@ -3,99 +3,119 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Reaction test</title>
+    <title>Download Time</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="https://png.pngtree.com/element_our/md/20180427/md_5ae2bfcc6832a.png">
     <script src="jquery-3.3.1.min.js"></script>
     <script>
-    
-    var nbturn = 5;
-    var turn = 0;
-    var arr = [];
-    var results = [];
-    var st = null;
-    var check = 0;
         
+          // File Size
+          var fs = null;
+          // Fize Size in MB
+          var fsb = null;
+          // Connexion Speed
+          var cs = null;
+          // Connexion Speed in Megabits
+          var csb = null;
+          // Type of Size
+          var ts = null;
+          // Type of Connexion
+          var tc = null;
+          
 
-    function play(){
-        if (turn < nbturn){
-            red();
-            console.log("Trun nb" + turn)
-        }
-        else{
-            end();
-        }
-    }
-    
-    function red(){
-        console.log("red")
-        $( ".generate" ).remove();
-        $('#dbody').append('<div class="generate" id="redscreen" onclick="toosoon()"><p class="bigtext">Click when the page<br>turn green</p></div>');
-        var x = Math.floor((Math.random() * 4000) + 2000);
-        var st = setTimeout(green, x);
-    }
-        
-    function green(){
-        console.log('WAIT')
-        if(check == 0){
-        console.log("green")
-        $( ".generate" ).remove();
-        $('#dbody').append('<div class="generate"  id="bluescreen" onclick="stop()"><p class="bigtext">Click now !</p></div>');
-        start();
-        }
-        else{
-            console.log('ELSE GREEN');
-            check = 0;
-        }
-    }
-        
-    function start(){
-    console.log("start")
-	time_avant= Date.now();
-	timer=setInterval(function() {time_ms=(Date.now()-time_avant);time_ms=(time_ms+"");});   
-    }   
-    
-    function stop(){
-        console.log("stop")
-        clearInterval(timer);
-        turn++;
-        $( ".generate" ).remove();
-        $('#dbody').append('<div class="generate" id="stopscreen" onclick="play()"><div id="divms"><center><table><tbody><tr><th><p class="ms" id="ms">000</p></th><th><p id="mstext">ms</p></th></tr></tbody></table></center><p id="conti">Click to continue</p></div></div>');
-        document.getElementById("ms").innerHTML=time_ms;document;
-        arr.push(time_ms);
-    }
-    function toosoon(){
-        check = 1;
-        $( ".generate" ).remove();
-        $('#dbody').append('<div class="generate" id="toosoon" onclick="play()"><p class="bigtext"> Your clicked too soon</p><br><p class="line"> Click to try again</p></div>');
-        
-    }
-        
-    function end(){
-        console.log('end');
-        $( ".generate" ).remove();
-        moyenne()
-    }
-        
-    function moyenne(){
-        for (var i=0,l=arr.length;i<l;i++) 
-            results.push(+arr[i]);
-        var moy = Math.round((results[0]+results[1]+results[2]+results[3]+results[4])/nbturn);
-        console.log(moy);
-        $('#dbody').append('<div id="endscreen"><p id="conti">You made an average of</p><center><table><tbody><tr><th><p class="ms" id="moy">000</p></th><th><p id="mstext">ms</p></th></tr></tbody></table></center></div>');
-        document.getElementById("moy").innerHTML=moy;document;
-    }
-    
+      function getInfos(){
+          fs = parseInt(document.getElementById("sizein").value);
+          cs = parseInt(document.getElementById("speedin").value);
+          ts = document.getElementById("typesize");
+          tc = document.getElementById("typespeed");
+          
+          console.log('Info getted');
+          //if (typeSize.checked == false){}
+          
+          //https://www.broadbandsolutions.com.au/business-centre/viewpoint/understanding-connection-speeds-megabytes-megabits
+      }
+      function calc(){ 
+            // Size to MB
+            if (ts.checked == true){
+                fsb = fs * 1000;
+                console.log('Size GB to MB ' + fsb);
+            }
+            else{
+                fsb = fs;
+                console.log('Size MB to MB ' + fsb);
+            } 
+            // Connexion Speed to bits
+            if (tc.checked == true){
+                console.log('Mbps CHECKED')
+                csb = cs;
+                console.log('Speed Mbps to mbps' + csb);
+            }
+            else {
+                csb = cs/1000;
+                console.log('Speed Kbps to mbps' + csb);
+            }
+            // Calcul in sec
+            timesec = fsb / (csb / 8);
+            console.log('usertime'+ timesec);
+            // Sec to HH MM SS
+            var h = Math.floor(timesec / 3600);
+            var m = Math.floor(timesec % 3600 / 60);
+            var s = Math.floor(timesec % 3600 % 60);
+            
+            var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours, ") : "";
+   
+            var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "";
+          
+            var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
+            
+            console.log("RESULT =====> " + hDisplay + mDisplay + sDisplay);
+            
+            }
+       
     </script>
   </head>
   <body id="dbody">
-      <div id="h"></div>
-      <div class="generate" id=ready onclick="play()">
-          <div id="i1"><p id="are">ARE</p></div>
-          <div id="i2"><p id="you">YOU</p></div>
-          <div id="i3"><p id="reeady">READY ?</p></div>
-          <div id="i4"><p id="sta">Click anywhere to start</p></div>
-        <p class="bigtext"></p>
-      </div>      
+      <div id="logo">
+        <svg id="clock" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 97.16 97.16" style="enable-background:new 0 0 97.16 97.16;" xml:space="preserve">
+        <g>
+	       <g>
+		      <path d="M48.58,0C21.793,0,0,21.793,0,48.58s21.793,48.58,48.58,48.58s48.58-21.793,48.58-48.58S75.367,0,48.58,0z M48.58,86.823    c-21.087,0-38.244-17.155-38.244-38.243S27.493,10.337,48.58,10.337S86.824,27.492,86.824,48.58S69.667,86.823,48.58,86.823z" fill="#FFFFFF"/>
+		      <path d="M73.898,47.08H52.066V20.83c0-2.209-1.791-4-4-4c-2.209,0-4,1.791-4,4v30.25c0,2.209,1.791,4,4,4h25.832    c2.209,0,4-1.791,4-4S76.107,47.08,73.898,47.08z" fill="#FFFFFF"/>
+	       </g>
+        </g>
+        </svg><p id="logotext">DL TIME</p>
+      </div>
+      <div id="box">
+        <form>
+            <div class="row">
+            <div class="textin">
+                <input onchange="getInfos();" id="sizein" type="number" min="1" max="1000">
+            </div>
+            <a id="size">MB</a>
+            <div class="toggle">
+                <label class="switch">
+                <input onchange="getInfos();" id="typesize" type="checkbox">
+                <span class="slider round"></span>
+                </label>
+            </div>
+            <a id="size">GB</a>
+            </div>
+            <div class="row">
+            <div class="textin">
+                <input onchange="getInfos();" id="speedin" type="number" min="1" max="5000">
+            </div>
+                <a id="speed">Kbps</a>
+            <div class="toggle">
+                <label class="switch">
+                <input onchange="getInfos();" id="typespeed" type="checkbox">
+                <span class="slider round"></span>
+                </label>
+            </div>
+                <a id="speed">Mbps</a>
+            </div>
+        </form>
+          <button onclick="calc()">Infos</button>
+          <p id="time"></p>
+      </div>
   </body>
 </html>

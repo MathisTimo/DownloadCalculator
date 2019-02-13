@@ -1,281 +1,133 @@
 /* Fonts from Google Fonts - more at https://fonts.google.com */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
-@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500');
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,500,900');
 
+
 body{
-    background-color: #000000;
+    background-color: #141526;
 }
 
-#i1{
-    position: inherit;
-    z-index:3;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-}
-#i2{
-    position: absolute;
-    z-index:2;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-}
-#i3{
-    position: absolute;
-    z-index:1;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-}
-#i3{
-    position: absolute;
-    z-index:0;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
+#clock{
+    width: 25px;
+    fill: white;
+    margin-left: 5vw;
+    margin-top: -213px;
 }
 
-
-#are{
-        color: white;
-    font-family: Roboto;
-    font-weight: 900;
-    font-size: 6vw;
-    vertical-align: middle;
-    text-align: center;
-    animation: mymove 5s 1 forwards;
-    animation-timing-function: cubic-bezier(.23,.1,.35,.99);
-    overflow: hidden;
-}
-@keyframes mymove {
-  0% {font-size: 50vw; margin-top: 0px; opacity: 0}
-  2% {opacity: 1;}
-  20% {opacity: 1;} 
-  26% {opacity: 0;}
-  33% {font-size: 0vw; margin-top: 37vh; text-align: center;opacity: 0;}
-  100% {font-size: 0vw; margin-top: 37vh; text-align: center;opacity: 0;}
+#clock:hover{
+    fill: #1cbfff;
 }
 
-#you{
-   
+#logotext{
     color: white;
-    font-family: Roboto;
-    font-weight: 900;
-    font-size: 6vw;
-    vertical-align: middle;
-    text-align: center;
-    animation: mymove2 6s 1 forwards;
-    animation-timing-function: cubic-bezier(.23,.1,.35,.99);
-    overflow: hidden;
-}
-@keyframes mymove2 {
-  0% {opacity: 0}
-  15% {font-size: 50vw; margin-top: 0px; opacity: 0}
-  20% {opacity: 1}
-  35% {opacity: 1}
-  40% {opacity: 0}
-  43% {font-size: 0vw; margin-top: 37vh; text-align: center;opacity: 0;}
-  100% {font-size: 0vw; margin-top: 37vh; text-align: center;opacity: 0;}
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-left: 10px;
 }
 
-#reeady{
-    color: white;
-    font-family: Roboto;
-    font-weight: 900;
-    font-size: 6vw;
-    vertical-align: middle;
-    text-align: center;
-    animation: mymove3 6s 1 forwards;
-    animation-timing-function: cubic-bezier(.23,.1,.35,.99);
-    overflow: hidden;
-}
-@keyframes mymove3 {
-  0% {opacity: 0}
-  35% {font-size: 25vw; margin-top: 20vh; opacity: 0}
-  38% {opacity: 1}
-  50% {opacity: 1}
-  55% {opacity: 0}
-  67% {font-size: 0vw; margin-top: 37vh; text-align: center;opacity: 0;}
-    100% {font-size: 0vw; margin-top: 37vh; text-align: center;opacity: 0;}
-}
-
-#sta{
-    color: white;
-    font-family: Roboto;
-    font-weight: 900;
-    font-size: 6vw;
-    vertical-align: middle;
-    text-align: center;
-    animation: mymove4 6s 1 forwards;
-    animation-timing-function: cubic-bezier(.23,.1,.35,.99);
-    overflow: hidden;
-}
-@keyframes mymove4 {
-  0% {opacity: 0}
-  60% {opacity: 0}
-  75% {opacity: 1}
-100% {margin-top: 37vh; text-align: center;opacity: 1;}
-}
-#intro{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgb(0, 0, 0);
-    z-index: 8;
-}
-
-#zone{
-    height: 300px;
-    background-color: black;
-}
-
-#zone2{
-    height: 300px;
-    background-color: #3b3b3b;
-}
-
-
-#divms{
-        height: 600px;
-        position:absolute; /*it can be fixed too*/
-        left:0; right:0;
-        top:0; bottom:0;
-        margin:auto;
-        max-width:100%;
-        max-height:100%;
-        overflow:auto;
-    
-}
-
-.bigtext{
-    color: white;
-    font-family: Roboto;
-    font-weight: 900;
-    font-size: 6vw;
-    margin-top: 37vh;
-    text-align: center;
-}
-
-
-.line{
-       color: white;
-    font-family: Roboto;
-    font-weight: 900;
-    font-size: 4vw;
-    text-align: center; 
-}
-#mstext{
-    color: white;
-    font-family: Roboto;
-    font-weight: 900;
-    font-size: 8vw;
-    text-align: center;
-    padding-bottom: 20px;
-}
-
-.ms{
-    color: white;
-    font-family: Roboto;
-    font-weight: 900;
-    font-size: 8vw;
-    text-align: center;
-    padding-bottom: 20px;
-}
-
-#conti{
-    color: white;
-    font-family: Roboto;
-    font-weight: 900;
-    font-size: 4vw;
-    text-align: center;
-}
-
-#ready {
-    position:fixed; /* FIXE FIXE FIXE FIXE FIXE FIXE FIXE FIXE FIXE*/
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgb(0, 0, 0);
-    z-index: 7;
-  }
-
-#redscreen{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgb(222, 38, 38);
-    z-index: 8;
-}
-
-#bluescreen{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgb(64, 203, 91);
-    z-index: 9;
-}
-#stopscreen{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgb(68, 129, 245);
-    z-index: 9;
+#logo{
     display: flex;
     flex-direction: row;
 }
-#start {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgba(51,51,51,0.7);
-    z-index: 10;
-  }
 
-#stopoverlay{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 11;
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
-#toosoon{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgba(51,51,51,0.7);
-    z-index: 10;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+    margin-top: -10px;
 }
 
-#endscreen{
-        height: 600px;
-        position:absolute;
-        left:0; right:0;
-        top:0; bottom:0;
-        margin:auto;
-        max-width:100%;
-        max-height:100%;
-        overflow:auto;
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid #30f7ff;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
-  display: none;}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  border: 2px solid #0089ff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+    
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+input[type=number] {
+  width: 5em;
+  padding: 5px 20px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 50px;
+  background-color: #ffffff;
+  color: #555555;
+  font-family: roboto;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.toggle{
+    margin-top: 23px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+} 
+
+#size{
+    font-family: Poppins;
+    color: white;
+    padding: 27px;
+    padding-right: 35px;
+    padding-left: 34.5px;
+    
+}
+#speed{
+    padding: 27px;
+    font-family: Poppins;
+    color: white;
+}
