@@ -76,15 +76,19 @@
   </head>
   <body id="dbody">
       <div id="logo">
-        <svg id="clock" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 97.16 97.16" style="enable-background:new 0 0 97.16 97.16;" xml:space="preserve">
-        <g>
-	       <g>
-		      <path d="M48.58,0C21.793,0,0,21.793,0,48.58s21.793,48.58,48.58,48.58s48.58-21.793,48.58-48.58S75.367,0,48.58,0z M48.58,86.823    c-21.087,0-38.244-17.155-38.244-38.243S27.493,10.337,48.58,10.337S86.824,27.492,86.824,48.58S69.667,86.823,48.58,86.823z" fill="#FFFFFF"/>
-		      <path d="M73.898,47.08H52.066V20.83c0-2.209-1.791-4-4-4c-2.209,0-4,1.791-4,4v30.25c0,2.209,1.791,4,4,4h25.832    c2.209,0,4-1.791,4-4S76.107,47.08,73.898,47.08z" fill="#FFFFFF"/>
-	       </g>
-        </g>
-        </svg><p id="logotext">DL TIME</p>
+        <svg id="clock" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 510 510" >
+<g>
+	<g id="access-time">
+		<path  d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z     M255,459c-112.2,0-204-91.8-204-204S142.8,51,255,51s204,91.8,204,204S367.2,459,255,459z"/>
+		<polygon  points="267.75,127.5 229.5,127.5 229.5,280.5 362.1,362.1 382.5,328.95 267.75,260.1   "/>
+	</g>
+            </g>
+</svg><p id="logotext">DOWNTIME</p>
       </div>
+      <div id="ring" style="position: absolute; left: 50%;">
+          <span class="start-ring"></span>
+          <span class="start-border"></span>
+          </div>
       <div id="box">
         <form>
             <div class="row">
@@ -116,6 +120,7 @@
         </form>
           <button onclick="calc()">Infos</button>
           <p id="time"></p>
+          
       </div>
   </body>
 </html>
