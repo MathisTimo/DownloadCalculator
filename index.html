@@ -30,11 +30,10 @@
           tc = document.getElementById("typespeed");
           
           console.log('Info getted');
-          //if (typeSize.checked == false){}
-          
-          //https://www.broadbandsolutions.com.au/business-centre/viewpoint/understanding-connection-speeds-megabytes-megabits
       }
       function calc(){ 
+            // Delete hover overlay
+          $('.start-border').css('background-image', 'linear-gradient(#141526,#141526),linear-gradient(to bottom,#2de5d1,#1fa4e9)');
             // Size to MB
             if (ts.checked == true){
                 fsb = fs * 1000;
@@ -71,7 +70,17 @@
             console.log("RESULT =====> " + hDisplay + mDisplay + sDisplay);
             
             }
-       
+            
+            /////// J QUERY ///////
+            
+            $(function() {
+                $('#textgo' || '.start-border').hover(function() {
+                    $('.start-border').css('background-image', 'radial-gradient(#0d1f2d,#0d1f2d),linear-gradient(to bottom,#2de5d1,#1fa4e9)');
+                    }, function() {
+                    // on mouseout, reset the background colour
+                    $('.start-border').css('background-image', 'linear-gradient(#141526,#141526),linear-gradient(to bottom,#2de5d1,#1fa4e9)');
+                    });
+                });
     </script>
   </head>
   <body id="dbody">
@@ -85,15 +94,21 @@
             </g>
 </svg><p id="logotext">DOWNTIME</p>
       </div>
-      <div id="ring" style="position: absolute; left: 50%;">
+      
+      <center><p id="textgo">GO</p></center>
+      
+      <div id="ring">
+          
           <span class="start-ring"></span>
           <span class="start-border"></span>
           </div>
+          
+      <center>
       <div id="box">
         <form>
             <div class="row">
             <div class="textin">
-                <input onchange="getInfos();" id="sizein" type="number" min="1" max="1000">
+                <input class="inputdata" onchange="getInfos();" id="sizein" type="number" min="1" max="1000">
             </div>
             <a id="size">MB</a>
             <div class="toggle">
@@ -106,7 +121,7 @@
             </div>
             <div class="row">
             <div class="textin">
-                <input onchange="getInfos();" id="speedin" type="number" min="1" max="5000">
+                <input class="inputdata" onchange="getInfos();" id="speedin" type="number" min="1" max="5000">
             </div>
                 <a id="speed">Kbps</a>
             <div class="toggle">
@@ -118,9 +133,9 @@
                 <a id="speed">Mbps</a>
             </div>
         </form>
-          <button onclick="calc()">Infos</button>
           <p id="time"></p>
           
       </div>
+          </center>
   </body>
 </html>
